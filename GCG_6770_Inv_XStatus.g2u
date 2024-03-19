@@ -1,0 +1,1253 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmXStatus..Create(BaseForm)
+Gui.frmXStatus..Caption("Inventory Extended Status")
+Gui.frmXStatus..Size(15045,10095)
+Gui.frmXStatus..MinX(15045)
+Gui.frmXStatus..MinY(10095)
+Gui.frmXStatus..Position(0,0)
+Gui.frmXStatus..BackColor(-2147483633)
+Gui.frmXStatus..MousePointer(0)
+Gui.frmXStatus..Event(UnLoad,Unload)
+Gui.frmXStatus..AlwaysOnTop(False)
+Gui.frmXStatus..FontName("Tahoma")
+Gui.frmXStatus..FontSize(8.25)
+Gui.frmXStatus..ControlBox(True)
+Gui.frmXStatus..MaxButton(True)
+Gui.frmXStatus..MinButton(True)
+Gui.frmXStatus..Moveable(True)
+Gui.frmXStatus..Sizeable(True)
+Gui.frmXStatus..ShowInTaskBar(True)
+Gui.frmXStatus..TitleBar(True)
+Gui.frmXStatus.picGSSLogo.Create(PictureBox)
+Gui.frmXStatus.picGSSLogo.Size(4125,960)
+Gui.frmXStatus.picGSSLogo.Position(5700,45)
+Gui.frmXStatus.picGSSLogo.Enabled(True)
+Gui.frmXStatus.picGSSLogo.Visible(True)
+Gui.frmXStatus.picGSSLogo.Zorder(0)
+Gui.frmXStatus.frameCutoff.Create(Frame)
+Gui.frmXStatus.frameCutoff.Size(1590,870)
+Gui.frmXStatus.frameCutoff.Position(30,60)
+Gui.frmXStatus.frameCutoff.Caption("Cutoff Date")
+Gui.frmXStatus.frameCutoff.Enabled(True)
+Gui.frmXStatus.frameCutoff.Visible(True)
+Gui.frmXStatus.frameCutoff.Zorder(0)
+Gui.frmXStatus.frameCutoff.FontName("Tahoma")
+Gui.frmXStatus.frameCutoff.FontSize(8.25)
+Gui.frmXStatus.dtpCutoff.Create(DatePicker)
+Gui.frmXStatus.dtpCutoff.Size(1485,285)
+Gui.frmXStatus.dtpCutoff.Position(30,240)
+Gui.frmXStatus.dtpCutoff.Parent("frameCutoff")
+Gui.frmXStatus.dtpCutoff.Enabled(False)
+Gui.frmXStatus.dtpCutoff.TabStop(True)
+Gui.frmXStatus.dtpCutoff.TabIndex(1)
+Gui.frmXStatus.dtpCutoff.Visible(True)
+Gui.frmXStatus.dtpCutoff.Zorder(0)
+Gui.frmXStatus.dtpCutoff.CheckBox(False)
+Gui.frmXStatus.dtpCutoff.FontName("Tahoma")
+Gui.frmXStatus.dtpCutoff.FontSize(8.25)
+Gui.frmXStatus.chkCutoff.Create(CheckBox)
+Gui.frmXStatus.chkCutoff.Size(330,300)
+Gui.frmXStatus.chkCutoff.Position(690,555)
+Gui.frmXStatus.chkCutoff.Parent("frameCutoff")
+Gui.frmXStatus.chkCutoff.Event(Click,chkCutoff_Click)
+Gui.frmXStatus.chkCutoff.TabStop(True)
+Gui.frmXStatus.chkCutoff.TabIndex(2)
+Gui.frmXStatus.chkCutoff.Enabled(True)
+Gui.frmXStatus.chkCutoff.Visible(True)
+Gui.frmXStatus.chkCutoff.Zorder(0)
+Gui.frmXStatus.chkCutoff.Caption("")
+Gui.frmXStatus.chkCutoff.FontName("Tahoma")
+Gui.frmXStatus.chkCutoff.FontSize(8.25)
+Gui.frmXStatus.lblStatus.Create(Label,"Loading Data....",False,1935,255,0,1680,90,True,0,"Arial",8,-2147483633,0,0)
+Gui.frmXStatus.lblStatus.BorderStyle(0)
+Gui.frmXStatus.pbStatus.Create(ProgressBar)
+Gui.frmXStatus.pbStatus.Size(3000,255)
+Gui.frmXStatus.pbStatus.Position(1680,300)
+Gui.frmXStatus.pbStatus.Visible(False)
+Gui.frmXStatus.cmdRefresh.Create(Button)
+Gui.frmXStatus.cmdRefresh.Size(975,345)
+Gui.frmXStatus.cmdRefresh.Position(1680,585)
+Gui.frmXStatus.cmdRefresh.Caption("REFRESH")
+Gui.frmXStatus.cmdRefresh.Event(Click,LoadDtXStatus)
+Gui.frmXStatus.cmdRefresh.TabStop(True)
+Gui.frmXStatus.cmdRefresh.TabIndex(3)
+Gui.frmXStatus.cmdRefresh.Enabled(True)
+Gui.frmXStatus.cmdRefresh.Visible(True)
+Gui.frmXStatus.cmdRefresh.Zorder(0)
+Gui.frmXStatus.cmdRefresh.FontName("Tahoma")
+Gui.frmXStatus.cmdRefresh.FontSize(8.25)
+Gui.frmXStatus.cmdSave.Create(Button)
+Gui.frmXStatus.cmdSave.Enabled(True)
+Gui.frmXStatus.cmdSave.Visible(True)
+Gui.frmXStatus.cmdSave.Zorder(0)
+Gui.frmXStatus.cmdSave.Size(345,345)
+Gui.frmXStatus.cmdSave.Position(10275,345)
+Gui.frmXStatus.cmdSave.Caption("")
+Gui.frmXStatus.cmdSave.FontName("Tahoma")
+Gui.frmXStatus.cmdSave.FontSize(8.25)
+Gui.frmXStatus.cmdSave.SvgPicture("icon_save_color")
+Gui.frmXStatus.cmdSave.Event(Click,cmdSave_Click)
+Gui.frmXStatus.cmdSave.ToolTip("Save current view mode")
+Gui.frmXStatus.cmdSave.Anchor(9)
+Gui.frmXStatus.GsGCXStatus.Create(GsGridControl)
+Gui.frmXStatus.GsGCXStatus.Size(14100,8700)
+Gui.frmXStatus.GsGCXStatus.Position(30,1020)
+Gui.frmXStatus.GsGCXStatus.TabStop(True)
+Gui.frmXStatus.GsGCXStatus.TabIndex(4)
+Gui.frmXStatus.GsGCXStatus.Enabled(True)
+Gui.frmXStatus.GsGCXStatus.Visible(True)
+Gui.frmXStatus.GsGCXStatus.Zorder(0)
+Gui.frmXStatus.GsGCXStatus.Event(CellValueChanged,GsGCXStatus_CellValueChanged)
+Gui.frmXStatus.AccordionControl1.Create(AccordionControl)
+Gui.frmXStatus.AccordionControl1.Enabled(True)
+Gui.frmXStatus.AccordionControl1.Visible(True)
+Gui.frmXStatus.AccordionControl1.Size(3900,9645)
+Gui.frmXStatus.AccordionControl1.Position(11145,0)
+Gui.frmXStatus.AccordionControl1.Minimized(True)
+Gui.frmXStatus.AccordionControl1.Dock(4)
+Gui.frmXStatus.AccordionControl1.Event(ElementClick,AccordionControl1_ElementClick)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+	V.Global.bLoadData.Declare
+	v.Global.iViewModeIdDelete.Declare
+	v.Global.iElementId.Declare
+	
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'TJS, July 2023
+'VT for Accessories Unlimited
+'Modified to make the material lead time editable
+
+	'Modified from ARC 4631 - GAB_4631_INV_XStatus.g2u - for ACCESSORIES UNLIMITED LLC
+	'New Script name GCG_6770_INV_XStatus.g2u
+	'Programmer: SAM STANKA
+	'Date: 5/24/2022
+	'Added the following columns:
+		'QTY on Sales Orders: this is a demand column that will be filled using a dictionary from open sales orders.
+		'Qty on Work Orders:  this is a supply column that will be filled with a dictionary from open work orders.
+		'OnHand - Qty On Sales:  this will be a formula column  OnHand - Qty On Sales Orders.
+	'Custom Grid Saving feature
+	'For the custom views, a context menu will be added to "Save Current View".  Clicking that menu item will serialize the gridview as it currently appears.  The user will give that view a name, and the layout will be stored in the GS Registry so the name can be retrieved later.
+	'A drop down field will be added to the top of the form.  This field will contain a list of the names for previously saved (serialized) views.  When the user selects a name from the list, the gridview will be reformatted to that layout.
+
+
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sGSSLogo.Declare
+	V.Local.sIcon.Declare
+	V.Local.sDir.Declare
+	V.Local.bDir.Declare
+
+	F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+	F.Intrinsic.String.Build("{0}\GAB\GAS\GAB_GSS_Logo_Green_Dash.png",V.Caller.PluginsDir,V.Local.sGssLogo)
+	Gui.frmXStatus.picGSSLogo.Picture(V.Local.sGSSLogo)
+	Gui.frmXStatus..Icon(V.Local.sIcon)
+	'Gui.frmTotalsPL..Icon(V.Local.sIcon)
+	
+	F.Intrinsic.Control.CallSub(SetAnchors)
+	F.Intrinsic.Control.CallSub(SetContextMenus)
+	F.Intrinsic.Control.CallSub(SetAccordionControl)
+	f.Intrinsic.Control.CallSub(SetViewModeContextMenu)
+	
+	Gui.frmXStatus..Show
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(v.DataTable.dtViewModes.Exists)
+		F.Data.Datatable.Close("dtViewModes")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Global.bLoadData)
+		F.Intrinsic.Control.CallSub(Serialize)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.End
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
+
+Program.Sub.SetAnchors.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	'0 - None
+	'1 - Top
+	'2 - Bottom
+	'4 - Left
+	'8 - Right
+	
+	Gui.frmXStatus.picGssLogo.Anchor(1)
+	Gui.frmXStatus.GsGCXStatus.Anchor(15)
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetAnchors.End
+
+Program.Sub.SetContextMenus.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	Gui.frmXStatus..ContextMenuCreate("ctxXStatus")
+	Gui.frmXStatus.GsGCXStatus.ContextMenuAttach("ctxXStatus")
+	Gui.frmXStatus..ContextMenuAddItem("ctxXStatus","Refresh",0,"Refresh")
+	Gui.frmXStatus..ContextMenuAddItem("ctxXStatus","Export",0,"Export")
+	Gui.frmXStatus..ContextMenuAddItem("ctxXStatus","ResetColumns",0,"Reset Columns")
+	Gui.frmXStatus..ContextMenuSetItemEventHandler("ctxXStatus","Refresh","LoadDtXStatus")
+	Gui.frmXStatus..ContextMenuSetItemEventHandler("ctxXStatus","Export","MenuClickExport")
+	Gui.frmXStatus..ContextMenuSetItemEventHandler("ctxXStatus","ResetColumns","MenuClickResetColumns")
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickExport.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare
+	V.Local.sForm.Declare
+	V.Local.sControl.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		F.Intrinsic.Control.Case("CTXXSTATUS")
+			V.Local.sForm.Set("frmXStatus")
+			V.Local.sControl.Set("GsGCXStatus")
+		F.Intrinsic.Control.Case("CTXPLS")
+			V.Local.sForm.Set("frmTotalsPL")
+			V.Local.sControl.Set("GsGCPLs")
+	F.Intrinsic.Control.EndSelect
+
+	F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+	F.Intrinsic.Control.If(V.Local.bExcel)
+		F.Intrinsic.String.Build("{0}\GAB_Inv_XStatus_{1}_Export.xlsx",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+			F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}\GAB_Inv_XStatus_{1}_Export.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sFileExport)
+		F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+		F.Intrinsic.Control.If(V.Local.bFileLocked)
+			F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+		F.Intrinsic.Control.Else
+			Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.MenuClickResetColumns.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.bSerialize.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		F.Intrinsic.Control.Case("CTXXSTATUS")
+			V.Global.bLoadData.Set(False)
+			F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,1002,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+			F.Intrinsic.Control.CallSub(LoadDtXStatus)
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickResetColumns.End
+
+Program.Sub.chkCutoff_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	F.Intrinsic.Control.If(V.Screen.frmXStatus!chkCutoff.Value,=,1)
+		Gui.frmXStatus.dtpCutoff.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.frmXStatus.dtpCutoff.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.chkCutoff_Click.End
+
+Program.Sub.LoadDtXStatus.Start
+	F.Intrinsic.Control.Try
+		
+		V.Local.dCutoff.Declare()
+		V.Local.dTemp.Declare()
+		
+		V.Local.iDifference.Declare()
+		V.Local.iTemp.Declare()
+		
+		V.Local.sAllPairs.Declare()
+		V.Local.sPartLoc.Declare()
+		V.Local.sRet.Declare()
+		V.Local.sSQL.Declare()
+		
+		GUI.frmXStatus.cmdRefresh.Enabled(False)
+		GUI.frmXStatus.GsGCXStatus.Enabled(False)
+		
+		Gui.frmXStatus.lblStatus.Visible(True)
+		Gui.frmXStatus.pbStatus.Min(0)
+		Gui.frmXStatus.pbStatus.Max(100)
+		GUI.frmXStatus.pbStatus.Value(0)
+		Gui.frmXStatus.pbStatus.Visible(True)
+		
+		F.ODBC.Connection!con.OpenCompanyConnection(1500)
+		
+		F.Intrinsic.Control.If(V.Global.bLoadData)
+			F.Intrinsic.Control.CallSub(Serialize)
+		F.Intrinsic.Control.EndIf
+		V.Global.bLoadData.Set(True)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtXStatus.Exists)
+			F.Data.DataTable.Close("dtXStatus")
+		F.Intrinsic.Control.EndIf
+
+		' Initialize main DT with InventoryMaster data.
+		GUI.frmXStatus.lblStatus.Caption("Loading master status...")
+		F.Data.DataTable.CreateFromSQL("dtXStatus", "con", "SELECT CONCAT(A.part, A.location) AS PartLoc, A.part AS Part, A.location AS Location, RTRIM(A.description) AS Description, RTRIM(RTRIM(B.description_2)+' '+RTRIM(B.description_3)) AS AltDesc, RTRIM(D.text) AS ExtraDesc, A.product_line AS Product_Line, CASE B.code_source WHEN 'P' THEN 'PS' WHEN 'J' THEN 'PJ' WHEN '' THEN 'PJ' WHEN 'M' THEN 'MS' WHEN 'F' THEN 'MJ' ELSE B.code_source END AS Code_Source, A.um_inventory AS UM_Inventory, A.time_material_lead AS Time_Material_Lead, A.code_sort AS Code_Sort, RTRIM(A.bin) AS Bin, A.code_abc AS Code_ABC, B.lbs AS LBS, CAST(NULL AS DATE) AS Date_History, A.qty_onhand AS Qty_Onhand, A.qty_reorder AS Qty_Reorder, A.qty_onorder_po + A.qty_onorder_wo AS OnOrder, A.qty_required AS Qty_Required, A.qty_usage_mo_01 + A.qty_usage_mo_02 + A.qty_usage_mo_03 + A.qty_usage_mo_04 + A.qty_usage_mo_05 + A.qty_usage_mo_06 + A.qty_usage_mo_07 + A.qty_usage_mo_08 + A.qty_usage_mo_09 + A.qty_usage_mo_10 + A.qty_usage_mo_11 + A.qty_usage_mo_12 AS Usage_Last_12_Mos, A.amt_price AS Amt_Price, C.cost AS Cost, C.matl AS Matl, C.labor AS Labor, C.ovhd AS Ovhd, C.outs AS Outs, C.freight AS Freight, C.oth AS Oth, CAST(CASE WHEN flag_lot = '' OR flag_lot = 'N' THEN 0 ELSE 1 END AS BIT) As Flag_Lot, CAST(CASE WHEN flag_drop = '' OR flag_drop = 'N' THEN 0 ELSE 1 END AS BIT) As Flag_Drop, CAST(CASE WHEN flag_serialize = '' Or flag_serialize = 'N' THEN 0 ELSE 1 END AS BIT) As Flag_Serialize, CAST(CASE WHEN obsolete_flag = '' Or obsolete_flag = 'N' THEN 0 ELSE 1 END AS BIT) As Obsolete_Flag, CAST(CASE WHEN flag_inactive = '' Or flag_inactive = 'N' THEN 0 ELSE 1 END AS BIT) As Flag_Inactive, RTRIM(B.name_vendor) AS Name_Vendor, RTRIM(B.text_info1) AS Text_Info1, RTRIM(B.text_info2) AS Text_Info2, '' as Notes, '' as Notes_2 FROM v_inventory_mstr A LEFT JOIN v_inventory_mst2 B ON A.part = B.part And A.location = B.location LEFT JOIN v_inventory_cost C On A.part = C.part And A.location = C.locn LEFT JOIN v_inv_extra_text D On A.part = D.part ORDER BY PartLoc;", True)
+		F.Data.Dictionary.CreateFromSQL("dNotes","con","select CONCAT(Part, Location), Notes from GCG_6770_NOTES")
+		F.Data.Dictionary.SetDefaultReturn("dNotes","")
+		F.Data.DataTable.FillFromDictionary("dtXStatus","dNotes","PartLoc","Notes")
+		F.Data.Dictionary.Close("dNotes")
+		F.Data.Dictionary.CreateFromSQL("dNotes2","con","select CONCAT(Part, Location), Notes_2 from GCG_6770_NOTES")
+		F.Data.Dictionary.SetDefaultReturn("dNotes2","")
+		F.Data.DataTable.FillFromDictionary("dtXStatus","dNotes2","PartLoc","Notes_2")
+		F.Data.Dictionary.Close("dNotes2")
+
+		GUI.frmXStatus.pbStatus.Value(15)
+		
+		'Qty Req on SO
+		F.Data.Datatable.AddColumn("dtXStatus","QTY_REQ_SO","Float")
+		F.Data.Dictionary.CreateFromSQL("dictSOQTY","con","select CONCAT(Part, Location) PartLoc, SUM(QTY_BO) From V_ORDER_LINES Where RECORD_NO <> '8000' Group by PartLoc")
+		F.Data.Dictionary.SetDefaultReturn("dictSOQTY",0.00)
+		F.Data.Datatable.FillFromDictionary("dtXStatus","dictSOQTY","PartLoc","QTY_REQ_SO")
+		F.Data.Dictionary.Close("dictSOQTY")
+		
+		'Qty Req on WO
+		F.Data.Datatable.AddColumn("dtXStatus","QTY_REQ_WO","Float")
+		F.Data.Dictionary.CreateFromSQL("dictWOQTY","con","select Part, SUM(HOURS_ESTIMATED - HOURS_ACTUAL) as QTY_ON_WO from V_JOB_OPERATIONS where LMO = 'M' and SEQ < 990000 and FLAG_CLOSED <> 'Y' Group by PART")
+		F.Data.Dictionary.SetDefaultReturn("dictWOQTY",0.00)
+		F.Data.Datatable.FillFromDictionary("dtXStatus","dictWOQTY","Part","QTY_REQ_WO")
+		F.Data.Dictionary.Close("dictWOQTY")
+		
+		'INV on hand - Qty Req on SO
+		F.Data.Datatable.AddExpressionColumn("dtXStatus","ONHAND_MINUS_SO_REQ","Float","[QTY_ONHAND] - [QTY_REQ_SO]")
+		
+		
+		' If the user has selected a cutoff date, then maybe we need to load from InventoryHistory. Otherwise, the InventoryMaster data is already enough.
+		F.Intrinsic.Control.If(V.Screen.frmXStatus!chkCutoff.Value, =, 1)
+		
+			V.Local.dCutoff.Set(V.Screen.frmXStatus!dtpCutoff.Value)
+
+			' To see if we should load InventoryHistory data, we check each PartLoc's MostRecentTransaction (most recent InventoryHistory record). For example...
+			'	If a PartLoc has had a MostRecentTransaction after the selected cutoff date, then there has been a transaction that has changed InventoryMaster since that CutoffDate.
+			'	So, the currently loaded InventoryMaster data would be reflecting a transaction that occurred after that CutoffDate.
+			'	So, we need to go further back in the InventoryHistory to find a transaction that would reflect the inventory status on that CutoffDate.
+			'	Specifically, we would need the MostRecentTransaction just before or on that CutoffDate for that PartLoc. And we would need the New values of that transaction.
+			
+			' So, let's start with a dictionary of each PartLoc's MostRecentTransactionAfterCutoff.
+			GUI.frmXStatus.lblStatus.Caption("Checking most recent transactions...")
+			F.Intrinsic.String.Build("SELECT RTRIM(CONCAT(part, location)) AS PartLoc, 'filler' FROM v_inventory_hist WHERE date_history > '{0}' AND NOT (code_transaction = 'P18' And old_inv_cost = new_inv_cost) ORDER BY PartLoc, date_history DESC, inv_hist_time DESC", V.Local.dCutoff.PervasiveDate, V.Local.sSQL)
+			F.Data.Dictionary.CreateFromSQL("dictMostRecentTransactionsAfterCutoff", "con", V.Local.sSQL)
+			F.Data.Dictionary.SetDefaultReturn("dictMostRecentTransactionsAfterCutoff", "KeyNotFound")
+			GUI.frmXStatus.pbStatus.Value(25)
+			
+			' If there was nothing loaded into that dictionary at all, then there has not been any transactions since the cutoff and we do not need to continue with loading InventoryHistory.
+			'	If there were no transactions since the cutoff, then the current InventoryMaster values are indeed the inventory status at the CutoffDate.
+			F.Data.Dictionary.ReturnAllPairs("dictMostRecentTransactionsAfterCutoff", V.Local.sAllPairs)
+			F.Intrinsic.Control.If(V.Local.sAllPairs, <>, "***NORETURN***")
+				
+				' Else, there were indeed transactions, so start loading InventoryHistory data.
+				
+				' Load all the transactions before or on the CutoffDate.
+				' Sort them by Date DESC, Time DESC so that Dictionary.CreateFromDataTable takes each PartLoc's most recent one.
+				GUI.frmXStatus.lblStatus.Caption("Loading history data...")
+				
+				'F.Intrinsic.String.Build("SELECT RTRIM(CONCAT(part, location)) As PartLoc, date_history, new_onhand, new_inv_cost, new_matl, new_labr, new_ovhd, new_outs, new_frgt, new_oth FROM v_inventory_hist WHERE date_history <= '{0}' ORDER BY PartLoc, date_action DESC, inv_hist_time DESC;", V.Local.dCutoff.PervasiveDate, V.Local.sSQL)
+				F.Intrinsic.String.Build("SELECT RTRIM(CONCAT(part, location)) As PartLoc, date_history, new_onhand, new_inv_cost, new_matl, new_labr, new_ovhd, new_outs, new_frgt, new_oth FROM v_inventory_hist WHERE date_history <= '{0}' ORDER BY PartLoc, date_history DESC, date_action DESC, inv_hist_time DESC;", V.Local.dCutoff.PervasiveDate, V.Local.sSQL)
+				F.Data.DataTable.CreateFromSQL("dtTransactionsBeforeCutoff" ,"con", V.Local.sSQL, True)
+				GUI.frmXStatus.pbStatus.Value(30)
+
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's HistoryDate.
+				GUI.frmXStatus.lblStatus.Caption("Loading history dates...")
+				F.Data.Dictionary.CreateFromDataTable("dictDateHistory", "dtTransactionsBeforeCutoff", "PartLoc", "date_history")
+				F.Data.Dictionary.SetDefaultReturn("dictDateHistory", "")
+				GUI.frmXStatus.pbStatus.Value(35)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewOnHand.
+				
+				
+				GUI.frmXStatus.lblStatus.Caption("Loading history onhand quantities...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewOnhand", "dtTransactionsBeforeCutoff", "PartLoc", "new_onhand")
+				F.Data.Dictionary.SetDefaultReturn("dictNewOnhand", 0.0)
+				GUI.frmXStatus.pbStatus.Value(40)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewInvCost", "dtTransactionsBeforeCutoff", "PartLoc", "new_inv_cost")
+				F.Data.Dictionary.SetDefaultReturn("dictNewInvCost", 0.0)
+				GUI.frmXStatus.pbStatus.Value(45)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewMaterialCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history material costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewMatl", "dtTransactionsBeforeCutoff", "PartLoc", "new_matl")
+				F.Data.Dictionary.SetDefaultReturn("dictNewMatl",0.0)
+				GUI.frmXStatus.pbStatus.Value(50)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewLaborCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history labor costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewLabr", "dtTransactionsBeforeCutoff", "PartLoc", "new_labr")
+				F.Data.Dictionary.SetDefaultReturn("dictNewLabr", 0.0)
+				GUI.frmXStatus.pbStatus.Value(55)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewOverheadCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history overhead costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewOvhd", "dtTransactionsBeforeCutoff", "PartLoc", "new_ovhd")
+				F.Data.Dictionary.SetDefaultReturn("dictNewOvhd", 0.0)
+				GUI.frmXStatus.pbStatus.Value(60)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewOutsideCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history outside costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewOuts", "dtTransactionsBeforeCutoff", "PartLoc", "new_outs")
+				F.Data.Dictionary.SetDefaultReturn("dictNewOuts", 0.0)
+				GUI.frmXStatus.pbStatus.Value(65)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewFreightCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history freight costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewFrgt", "dtTransactionsBeforeCutoff", "PartLoc", "new_frgt")
+				F.Data.Dictionary.SetDefaultReturn("dictNewFrgt", 0.0)
+				GUI.frmXStatus.pbStatus.Value(70)
+				
+				' Load each PartLoc's MostRecentTransactionBeforeCutoff's NewOtherCost.
+				GUI.frmXStatus.lblStatus.Caption("Loading history other costs...")
+				F.Data.Dictionary.CreateFromDataTable("dictNewOth", "dtTransactionsBeforeCutoff", "PartLoc", "new_oth")
+				F.Data.Dictionary.SetDefaultReturn("dictNewOth", 0.0)
+				GUI.frmXStatus.pbStatus.Value(75)
+				
+				' Loop through all the PartLocs in the main DT and replace InventoryMaster data with InventoryHistory data, if applicable.
+				'	If the PartLoc is in dictMostRecentTransactionsAfterCutoff, then it will try to load InventoryHistory data for it.
+				'		If the InventoryHistory dictionary has the data, then it replaces the InventoryMaster data.
+				'		If the InventoryHistory dictionary does not, then it replaces the InventoryMaster data with a 0.
+				'	If the PartLoc is not in dictMostRecentTransactionsAfterCutoff, then the InventoryMaster data remains.
+				GUI.frmXStatus.lblStatus.Caption("Loading history status...")
+				F.Intrinsic.Control.For(V.Local.iTemp, 0, V.DataTable.dtXStatus.RowCount--, 1)
+			
+					V.Local.sPartLoc.Set(V.DataTable.dtXStatus(V.Local.iTemp).PartLoc!FieldValRTrim)
+					
+					F.Intrinsic.Control.If(V.Dictionary.dictMostRecentTransactionsAfterCutoff![V.Local.sPartLoc], <>, "KeyNotFound")
+						
+						F.Intrinsic.Control.If(V.Dictionary.dictDateHistory![V.Local.sPartLoc], =, "")
+							F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Date_History", V.Ambient.DBNull)
+						F.Intrinsic.Control.Else
+							F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Date_History", V.Dictionary.dictDateHistory![V.Local.sPartLoc])
+						F.Intrinsic.Control.EndIf
+						
+						
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Qty_OnHand", V.Dictionary.dictNewOnHand![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Cost", V.Dictionary.dictNewInvCost![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Matl", V.Dictionary.dictNewMatl![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Labor", V.Dictionary.dictNewLabr![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Ovhd", V.Dictionary.dictNewOvhd![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Outs", V.Dictionary.dictNewOuts![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Freight", V.Dictionary.dictNewFrgt![V.Local.sPartLoc])
+						F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Oth", V.Dictionary.dictNewOth![V.Local.sPartLoc])
+						
+					F.Intrinsic.Control.EndIf
+					
+				F.Intrinsic.Control.Next(V.Local.iTemp)
+				
+				F.Data.Dictionary.Close("dictDateHistory")
+				F.Data.Dictionary.Close("dictNewOnHand")
+				F.Data.Dictionary.Close("dictNewInvCost")
+				F.Data.Dictionary.Close("dictNewMatl")
+				F.Data.Dictionary.Close("dictNewLabr")
+				F.Data.Dictionary.Close("dictNewOvhd")
+				F.Data.Dictionary.Close("dictNewOuts")
+				F.Data.Dictionary.Close("dictNewFrgt")
+				F.Data.Dictionary.Close("dictNewOth")
+				
+				F.Data.DataTable.Close("dtTransactionsBeforeCutoff")
+
+			F.Intrinsic.Control.EndIf
+			
+			F.Data.Dictionary.Close("dictMostRecentTransactionsAfterCutoff")
+			
+			' Finally, let's check the PartCreateDate values for each PartLoc.
+			'	When using a cutoff, if a PartLoc's PartCreateDate is after the CutoffDate, then zero out OnHand.
+			'	This effectively zeros out the Extended Cost and Extended Price, probably the main values customers are concerned with.
+			' Some options to consider in the future depending on feedback:
+			'	Option 1: Make it more like Andres' original implementation. Move this check towards the beginning and only do it to the data coming from Master. After that, if History data happens to overwrite the zeros, then let it.
+			'	Option 2: Make it zero out more than just OnHand. This check can zero out values loaded from History, so it would look weird if a History'd row has OnHand zeroed out, but still has its other History values (Date History, Cost, etc.).
+			GUI.frmXStatus.lblStatus.Caption("Checking part creation dates...")
+			F.Intrinsic.String.Build("SELECT RTRIM(CONCAT(part, location)) AS PartLoc, 'filler' FROM v_inventory_mst3 WHERE part_create_date > '{0}'", V.Local.dCutoff.PervasiveDate, V.Local.sSQL)
+			F.Data.Dictionary.CreateFromSQL("dictPartCreatedAfterCutoff", "con", V.Local.sSQL)
+			F.Data.Dictionary.SetDefaultReturn("dictPartCreatedAfterCutoff", "KeyNotFound")
+			F.Intrinsic.Control.For(V.Local.iTemp, 0, V.DataTable.dtXStatus.RowCount--, 1)
+				V.Local.sPartLoc.Set(V.DataTable.dtXStatus(V.Local.iTemp).PartLoc!FieldValRTrim)
+				F.Intrinsic.Control.If(V.Dictionary.dictPartCreatedAfterCutoff![V.Local.sPartLoc], <>, "KeyNotFound")
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Date_History", V.Ambient.DBNull)
+					
+					F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Qty_OnHand", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Cost", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Matl", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Labor", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Ovhd", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Outs", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Freight", 0.0)
+					'F.Data.DataTable.SetValue("dtXStatus", V.Local.iTemp, "Oth", 0.0)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.iTemp)
+			F.Data.Dictionary.Close("dictPartCreatedAfterCutoff")
+
+		F.Intrinsic.Control.EndIf
+		GUI.frmXStatus.pbStatus.Value(80)
+		
+		' At this point, all DB data is finished loading, so do any other grid stuff.
+		
+		GUI.frmXStatus.lblStatus.Caption("Calculating extensions...")
+		F.Data.DataTable.AddExpressionColumn("dtXStatus", "Ext_Price", Float, "Qty_OnHand * Amt_Price")
+		F.Data.DataTable.AddExpressionColumn("dtXStatus", "Ext_Cost", Float, "Qty_OnHand * Cost")
+		GUI.frmXStatus.pbStatus.Value(85)
+		
+		GUI.frmXStatus.lblStatus.Caption("Loading grid...")
+		F.Intrinsic.Control.CallSub(LoadGvXStatus)
+		GUI.frmXStatus.pbStatus.Value(90)
+		
+		GUI.frmXStatus.lblStatus.Caption("Loading previous settings...")
+		F.Intrinsic.Control.CallSub(Deserialize)
+		GUI.frmXStatus.pbStatus.Value(95)
+		
+		GUI.frmXStatus.lblStatus.Caption("Cleaning up.")
+		F.ODBC.Connection!con.Close
+		GUI.frmXStatus.pbStatus.Value(100)
+		
+		Gui.frmXStatus.lblStatus.Visible(False)
+		Gui.frmXStatus.pbStatus.Visible(False)
+		
+		GUI.frmXStatus.GsGCXStatus.Enabled(True)
+		GUI.frmXStatus.cmdRefresh.Enabled(True)
+		
+		GUI.frmXStatus.lblStatus.Caption("")
+		
+		F.Intrinsic.Control.Catch
+			V.Local.sError.Declare()
+			F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+			F.Intrinsic.UI.Msgbox(V.Local.sError)
+			F.Intrinsic.Control.End
+		F.Intrinsic.Control.EndTry
+
+Program.Sub.LoadDtXStatus.End
+
+Program.Sub.LoadGvXStatus.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.icolumn.Declare
+	
+	Gui.frmXStatus.GsGCXStatus.AddGridviewFromDatatable("gvXStatus","dtXStatus")
+	Gui.frmXStatus.GsGCXStatus.SuspendLayout()
+	Gui.frmXStatus.GsGCXStatus.SetGridViewProperty("gvXStatus","MultiSelect",True)
+	Gui.frmXStatus.GsGCXStatus.SetGridViewProperty("gvXStatus","AllowSort",True)
+	Gui.frmXStatus.GsGCXStatus.SetGridViewProperty("gvXStatus","AllowFilter",True)
+	Gui.frmXStatus.GsGCXStatus.SetGridViewProperty("gvXStatus","ShowGroupPanel",True)
+	Gui.frmXStatus.GsGCXStatus.SetGridViewProperty("gvXStatus","EnableAppearanceOddRow",True)
+	Gui.frmXStatus.GsGCXStatus.SetGridViewProperty("gvXStatus","OptionsViewColumnAutoWidth",False)
+	
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","PartLoc","Visible",False)
+	V.Local.icolumn.Set(0)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Part","VisibleIndex",V.Local.icolumn)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","VisibleIndex",V.Local.icolumn.++)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","VisibleIndex",V.Local.icolumn.++)
+
+	
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Part","Caption","Part")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","Caption","Loc")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","Caption","Description")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","Caption","Alt Description")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","Caption","Extra Description")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","Caption","PL")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","Caption","Source Code")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","Caption","Inv UM")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","Caption","Lead Time")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","Caption","Sort Code")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","Caption","Bin")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","Caption","ABC Code")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","Caption","Weight")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","Caption","Date History")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","Caption","Qty On Hand")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","Caption","Reorder Point")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","Caption","Qty On Order")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","Caption","Qty Required")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","Caption","Usage (12 Mths)")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","Caption","Price")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","Caption","Unit Cost")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","Caption","Material")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","Caption","Labor")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","Caption","Overhead")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","Caption","Outside")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","Caption","Freight")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","Caption","Other")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","Caption","Ext. Price")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","Caption","Ext. Cost")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","Caption","Lot/Bin")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","Caption","Drop")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","Caption","Serialized")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","Caption","Obsolete")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","Caption","Inactive")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","Caption","Name Vendor")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","Caption","Text Info 1")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","Caption","Text Info 2")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","Caption","On hand - SO Qty Req. ")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","Caption","WO Qty Req.")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","Caption","SO Qty Req.")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","Caption","Special Notes")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","Caption","Plan Date")
+	
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Part","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","AllowEdit",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","AllowEdit",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","AllowEdit",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","AllowEdit",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","AllowEdit",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","AllowEdit",False)
+	
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","ReadOnly",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","ReadOnly",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","ReadOnly",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","ReadOnly",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","ReadOnly",False)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","ReadOnly",False)
+
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Part","MinWidth","120")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","MinWidth","200")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","MinWidth","250")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","MinWidth","300")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","MinWidth","85")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","MinWidth","65")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","MinWidth","130")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","MinWidth","130")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","MinWidth","130")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","MinWidth","100")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","MinWidth","200")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","MinWidth","200")
+
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Part","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","HeaderFontBold",True)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","HeaderFontBold",True)
+
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Part","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Description","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","AltDesc","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ExtraDesc","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","HeaderHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","HeaderHAlignment","Center")
+
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Location","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Product_Line","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Source","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","UM_Inventory","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Time_Material_Lead","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_Sort","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Bin","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Code_ABC","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Lot","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Drop","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Serialize","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Obsolete_Flag","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Flag_Inactive","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Name_Vendor","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info1","CellHAlignment","Center")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Text_Info2","CellHAlignment","Center")
+
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","LBS","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_OnHand","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Reorder","DisplayCustomNumeric","#,###,##0")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","OnOrder","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Qty_Required","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Usage_Last_12_Mos","DisplayCustomNumeric","#,###,##0")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Amt_Price","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Cost","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Matl","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Labor","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ovhd","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Outs","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Freight","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Oth","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Price","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Ext_Cost","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","ONHAND_MINUS_SO_REQ","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_WO","DisplayCustomNumeric","#,###,##0.00####")
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","QTY_REQ_SO","DisplayCustomNumeric","#,###,##0.00####")
+
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Date_History","DisplayCustomDatetime","d")
+	
+	
+	Gui.frmXStatus.GsGCXStatus.AddSummaryItem("gvXStatus","Qty_OnHand","","Sum","","","n")
+	Gui.frmXStatus.GsGCXStatus.AddSummaryItem("gvXStatus","OnOrder","","Sum","","","n")
+	Gui.frmXStatus.GsGCXStatus.AddSummaryItem("gvXStatus","Qty_Required","","Sum","","","n")
+	Gui.frmXStatus.GsGCXStatus.AddSummaryItem("gvXStatus","Ext_Price","","Sum","","","n")
+	Gui.frmXStatus.GsGCXStatus.AddSummaryItem("gvXStatus","Ext_Cost","","Sum","","","")
+	
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","CellBackColor",V.Enum.ThemeColors!ColorYellow.Highlight)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","CellBackColor",V.Enum.ThemeColors!ColorYellow.Highlight)
+	
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes","MaxLength",32700)
+	Gui.frmXStatus.GsGCXStatus.SetColumnProperty("gvXStatus","Notes_2","MaxLength",32700)
+	
+	F.Intrinsic.Control.If(V.Caller.GSSVersion,>,2016.2)
+		Gui.frmXStatus.GsGCXStatus.AddGridGroupSummaryItem("gvXStatus","Ext_Cost","Ext_Cost2","Sum","| Tot Cost: "," |","n")
+	F.Intrinsic.Control.EndIf
+	
+	Gui.frmXStatus.GsGCXStatus.ResumeLayout()
+	Gui.frmXStatus.GsGCXStatus.MainView("gvXStatus")
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.LoadGvXStatus.End
+
+Program.Sub.Serialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSerialize.Declare
+	
+	'GvXStatus
+	Gui.frmXStatus.GsGCXStatus.Serialize("gvXStatus",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,1002,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	
+	V.Local.sSerialize.Declare
+	
+	'GvXStatus
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,1002,6,"",V.Local.sSerialize)
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.frmXStatus.GsGCXStatus.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.SetAccordionControl.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.iElementID.Declare
+	V.Local.iElementID.Set(0)
+	V.Local.sKeys.Declare
+	V.Local.iCnt.Declare
+	V.Local.sViewIDName.Declare
+	V.Local.sSerialize.Declare
+	
+	F.Data.Datatable.Create("dtViewModes",True)
+	F.Data.Datatable.AddColumn("dtViewModes","IDName","Long")
+	F.Data.Datatable.AddColumn("dtViewModes","Caption","string")
+	F.Data.Datatable.AddColumn("dtViewModes","XML","string")
+	F.Data.Datatable.AddExpressionColumn("dtViewModes","Key","string","[IDName] + ':' + [Caption]")
+	gui.frmXStatus.AccordionControl1.AddElement(AccElemViewMode,"View Modes","icon_show_color",16,16,,-1,0,"",True,True,False,0)
+	gui.frmXStatus.AccordionControl1.AddElement("MainView","Main View","",16,16,,-1,0,"AccElemViewMode",False,True,False,1)
+	'gui.frmXStatus.AccordionControl1.AddElement(V.Local.iElementID.++,"Main View","",16,16,,-1,0,"",False,True,1)
+	
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,2000,5,"",V.Local.sKeys)
+	F.Intrinsic.Control.If(V.Local.sKeys.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sKeys,"!*!",V.Local.sKeys)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sKeys.UBound,1)
+			F.Intrinsic.String.Split(V.Local.sKeys(V.Local.iCnt),":",V.Local.sViewIDName)
+			gui.frmXStatus.AccordionControl1.AddElement(V.Local.sViewIDName(0),v.Local.sViewIDName(1),"",16,16,,-1,0,"AccElemViewMode",False,True,False,1)
+			F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,V.Local.sViewIDName(0),6,"",V.Local.sSerialize)
+			f.Data.Datatable.AddRow("dtViewModes","IDName",V.Local.sViewIDName(0),"Caption",V.Local.sViewIDName(1),"XML",V.Local.sSerialize)
+		F.Intrinsic.Control.Next(v.Local.iCnt)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.SetAccordionControl.End
+
+Program.Sub.SetViewModeContextMenu.Start
+gui.frmXStatus..ContextMenuCreate("ctxViewMode")
+gui.frmXStatus..ContextMenuAddItem("ctxViewMode","DeleteViewMode",0,"Delete View Mode")
+Gui.frmXStatus..ContextMenuSetItemEventHandler("ctxViewMode","DeleteViewMode","DeleteViewModeClick")
+   
+Program.Sub.SetViewModeContextMenu.End
+
+Program.Sub.DeleteViewModeClick.Start
+F.Intrinsic.Control.Try
+ V.Local.sError.Declare
+ v.Local.sQuery.Declare
+ v.Local.iRowIndex.Declare
+ v.Local.iUserID.Declare
+ V.Local.icnt.Declare
+ V.Local.sVAL.Declare
+ 
+'remove the view mode from the gs registry, dtViewModes, and the accordion control 
+	f.Intrinsic.String.Build("IDName = {0}", v.Global.iViewModeIdDelete, v.Local.sQuery)
+	f.Data.DataTable.Select("dtViewModes",v.Local.sQuery,v.Local.iRowIndex)
+
+	Function.Global.Security.GetUserID(v.Caller.User, v.Caller.CompanyCode, v.Local.iUserID)
+	F.Intrinsic.String.Build("DELETE FROM GS_REGISTRY where USER_ID = '{0}' and COMPANY = '{1}' and PROGRAM = 'GVXSTATUS' and REG_ID = '6770' and SEQ = '{2}'",V.Local.iUserID,V.Caller.CompanyCode,v.Global.iViewModeIdDelete,v.Local.sQuery)
+	Function.ODBC.Connection!conx.OpenCommonConnection
+	f.ODBC.Connection!conx.Execute(v.local.sQuery)	
+	f.ODBC.Connection!conx.Close
+	
+	F.Data.Datatable.DeleteRow("dtViewModes",V.Local.iRowIndex)
+	gui.frmXStatus.AccordionControl1.RemoveElement(v.Global.iViewModeIdDelete)
+	
+	'Adding IDs and captions as the key to the user specific gs_registry string value record
+	F.Intrinsic.Control.For(V.Local.icnt,0,V.DataTable.dtViewModes.RowCount--,1)
+		F.Intrinsic.Control.If(V.Local.icnt,=,0)
+			V.Local.sVAL.Set(V.DataTable.dtViewModes(v.Local.icnt).Key!Fieldvaltrim)
+		F.Intrinsic.Control.Else	
+			F.Intrinsic.String.Build("{0}!*!{1}",V.Local.sVAL,V.DataTable.dtViewModes(v.Local.icnt).Key!Fieldvaltrim,V.Local.sVAL)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.icnt)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,2000,False,V.local.sVAL.PSQLFriendly,False,0,-999.0,1/1/1980,12:00:00 AM,"")
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.DeleteViewModeClick.End
+
+Program.Sub.AccordionControl1_ElementClick.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+v.Local.XMouse.Declare(Long)
+v.Local.YMouse.Declare(Long)
+    
+Function.Intrinsic.Control.BlockEvents 
+'Check to make sure group name wasn't clicked 
+f.Intrinsic.Control.If(v.Args.ElementID,<>,"Group by-","AND",v.Args.ElementID,<>,"Custom-")
+f.Intrinsic.Control.If(v.Args.ElementID,<>,"AccElemViewMode")
+
+	f.Intrinsic.Control.If(v.Args.Button,=,"Right")      
+		f.Intrinsic.Control.If(v.Args.ElementID,<>,"MainView")
+	  		F.Intrinsic.API.GetMousePosition(V.Local.XMouse,V.Local.YMouse)
+	  		gui.frmXStatus..ContextMenuShow("ctxViewMode",v.Local.XMouse,v.Local.YMouse)
+			v.Global.iViewModeIdDelete.Set(v.Args.ElementID)
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else
+	    f.Intrinsic.Control.If(v.Args.ElementStyle,<>,0)
+	    	F.Intrinsic.Control.If(v.Args.ElementID,<>,"MainView")
+	    		v.Global.iElementId.Set(v.Args.ElementId)
+	    		gui.frmXStatus.GsGCXStatus.InvokeWait("Loading...","Please Wait")    	    	
+				f.Intrinsic.Control.CallSub(LoadSavedView,"LinkID",V.Args.ElementID)
+			F.Intrinsic.Control.Else
+				'They clicked on Main view button so we will just treat this as column resetting
+				F.Intrinsic.Control.CallSub(MenuClickResetColumns,"MenuName","CTXXSTATUS")
+			F.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		gui.frmXStatus.GsGCXStatus.HideWait
+	f.Intrinsic.Control.EndIf  
+	
+f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.UnBlockEvents
+
+'F.Intrinsic.Control.SelectCase(V.Args.ELEMENTID)
+'f.Intrinsic.Control.Case("mainView")
+    'v.Global.sNavigationPage.Set("mainView")
+	
+'F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.AccordionControl1_ElementClick.End
+
+Program.Sub.LoadSavedView.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	v.Local.SerializedText.Declare
+	v.Local.sQuery.Declare
+	v.Local.iRowIndex.Declare
+	
+		'Have they loaded data yet?
+		F.Intrinsic.Control.If(V.Global.bLoadData)
+			'grab the already loaded XML string
+			f.Intrinsic.String.Build("IDName = {0}", v.Global.iElementId, v.Local.sQuery)
+			f.Data.DataTable.Select("dtViewModes",v.Local.sQuery,v.Local.iRowIndex)
+			v.Local.SerializedText.Set(V.DataTable.dtViewModes(v.Local.iRowIndex).XML!fieldvaltrim)
+			
+			'is the XML string blank?
+			F.Intrinsic.Control.If(v.Local.SerializedText,<>,"")
+				gui.frmXStatus.GsGCXStatus.ClearGrouping("gvXStatus")
+				gui.frmXStatus.GsGCXStatus.ClearSorting("gvXStatus")
+				gui.frmXStatus.GsGCXStatus.Deserialize(V.Local.SerializedText)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	
+
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.LoadSavedView.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sRet.Declare
+	v.Local.sSerialize.Declare
+	v.Local.sTemp.Declare
+	v.Local.iUserID.Declare
+	v.local.sSQL.Declare
+	v.Local.sQuery.Declare
+	v.Local.sRowIndex.Declare
+	V.Local.iMsgRet.Declare
+	V.Local.iIDName.Declare(Long,-1)
+	v.Local.icnt.Declare
+	V.Local.sVAL.Declare
+	
+	f.Intrinsic.UI.Inputbox("Custom view mode name","Custom View Mode","",v.Local.sRet)
+	
+	f.Intrinsic.Control.If(V.Local.sRet.IsCancel, =, False)
+		f.Intrinsic.String.RTrim(V.Local.sRet,v.Local.sRet)
+		'Check to see if the view name is already taken
+		f.Intrinsic.String.Build("Caption = '{0}'", v.Local.sRet, v.Local.sQuery)
+		f.Data.DataTable.Select("dtViewModes",v.Local.sQuery,v.Local.sRowIndex)
+		F.Intrinsic.Control.If(V.Local.sRowIndex,<>,"***NORETURN***")
+			F.Intrinsic.UI.Msgbox("Custom View Mode Name already exists, would you like to overwrite the existsing view?","",4,V.Local.iMsgRet)
+			F.Intrinsic.Control.If(V.Local.iMsgRet,=,6)
+				V.Local.iIDName.Set(V.DataTable.dtViewModes(V.Local.sRowIndex).IDName!fieldval)
+			F.Intrinsic.Control.Else
+				f.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		
+		gui.frmXStatus.GsGCXStatus.Serialize("gvXStatus",v.Local.sSerialize)
+		
+		'Get Next element ID name saved as the SEQ in the GS registry, if we are not overwritting an existing ID
+		F.Intrinsic.Control.If(V.Local.iIDName,=,-1)
+			f.Data.DataView.Create("dtViewModes","dvViewModes",22,,"IDName DESC")
+			F.Intrinsic.Control.If(V.DataView.dtViewModes!dvViewModes.RowCount,<>,0)
+				V.Local.iIDName.Set(V.DataView.dtViewModes!dvViewModes(0).IDName!fieldVal)
+				V.Local.iIDName.Set(V.Local.iIDName.++)
+			F.Intrinsic.Control.Else
+				V.Local.iIDName.Set(1)
+			F.Intrinsic.Control.EndIf
+			F.Data.DataView.Close("dtViewModes","dvViewModes")
+		F.Intrinsic.Control.EndIf
+
+		'Adding serialized value to GS registry
+		F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,V.Local.iIDName,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+		
+		'Check if we are overwriting and existing value or not, then update DT and GS reg value
+		F.Intrinsic.Control.If(V.Local.sRowIndex,=,"***NORETURN***")
+			'adding the record to the dtViewModes Datatable
+			F.Data.Datatable.AddRow("dtViewModes","IDName",V.Local.iIDName,"Caption",V.Local.sRet,"XML",V.Local.sSerialize)
+			
+			'Adding IDs and captions as the key to the user specific gs_registry string value record
+			F.Intrinsic.Control.For(V.Local.icnt,0,V.DataTable.dtViewModes.RowCount--,1)
+				F.Intrinsic.Control.If(V.Local.icnt,=,0)
+					V.Local.sVAL.Set(V.DataTable.dtViewModes(v.Local.icnt).Key!Fieldvaltrim)
+				F.Intrinsic.Control.Else	
+					F.Intrinsic.String.Build("{0}!*!{1}",V.Local.sVAL,V.DataTable.dtViewModes(v.Local.icnt).Key!Fieldvaltrim,V.Local.sVAL)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.icnt)
+			F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVXSTATUS",6770,2000,False,V.local.sVAL.PSQLFriendly,False,0,-999.0,1/1/1980,12:00:00 AM,"")
+			
+			'adding the accordion element to the control
+			gui.frmXStatus.AccordionControl1.AddElement(V.Local.iIDName.String,v.Local.sRet,"",16,16,,-1,0,"AccElemViewMode",False,True,False,1)
+		F.Intrinsic.Control.Else
+			F.Data.Datatable.SetValue("dtViewModes",V.Local.sRowIndex.Long,"XML",V.Local.sSerialize)
+		F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.EndIf
+	
+	
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.GsGCXStatus_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	V.Local.sFieldMap.Declare
+	V.Local.sPart.Declare
+	V.Local.sLoc.Declare
+	V.Local.sSQL.Declare
+	
+	Gui.frmXStatus.GsGCXStatus.GetCellValueByColumnName("gvXStatus","PART",V.Args.RowIndex,V.Local.sPart)
+	Gui.frmXStatus.GsGCXStatus.GetCellValueByColumnName("gvXStatus","LOCATION",V.Args.RowIndex,V.Local.sLoc)
+	
+	F.Intrinsic.Control.SelectCase(V.Args.Column.UCase)
+		F.Intrinsic.Control.CaseAny("NOTES","NOTES_2")
+			F.Data.DataTable.Create("dtSave",False)
+			F.Data.DataTable.AddColumn("dtSave","PART","String")
+			F.Data.DataTable.AddColumn("dtSave","LOCATION","String")
+			F.Data.DataTable.AddColumn("dtSave",V.Args.Column,"String")
+			F.Data.DataTable.AddRow("dtSave","PART",V.DataTable.dtXStatus(V.Args.RowIndex).Part!FieldVal,"LOCATION",V.DataTable.dtXStatus(V.Args.RowIndex).Location!FieldVal,V.Args.Column,V.Args.Value)
+			F.Intrinsic.String.Build("PART@!@PART*!*LOCATION@!@LOCATION*!*{0}@!@{0}",V.Args.Column.UCase,V.Local.sFieldMap)
+			F.ODBC.Connection!conNOTES.OpenCompanyConnection
+			F.Data.DataTable.SaveToDB("dtSave","conNOTES","GCG_6770_NOTES","PART*!*LOCATION",256,V.Local.sFieldMap)
+			F.ODBC.Connection!conNOTES.Close
+			F.Data.DataTable.Close("dtSave")
+			
+		F.Intrinsic.Control.Case("TIME_MATERIAL_LEAD")
+			F.Intrinsic.String.Build("Update INVENTORY_MSTR set TIME_MATERIAL_LEAD = '{0}' where PART = '{1}' and LOCATION = '{2}'",V.Args.Value.Long,V.Local.sPart.Trim,V.Local.sLoc.Trim,V.Local.sSQL)
+			
+			F.ODBC.Connection!conts.OpenCompanyConnection
+				F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+			F.ODBC.Connection!conts.Close
+		
+	F.Intrinsic.Control.EndSelect
+	
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	F.Intrinsic.Control.EndTry
+Program.Sub.GsGCXStatus_CellValueChanged.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$tsmith$}$20230711130036523$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tX2XgKkTpyY4s+2q8bHqWt57SjG90lCQQRL2BkqNwdxEE=
+Program.Sub.Comments.End
